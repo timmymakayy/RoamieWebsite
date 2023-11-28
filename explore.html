@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Meta tags for character set and viewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  
+  <!-- Title of the webpage -->
+  <title>Explore Page</title>
+  
+  <!-- Link to external CSS file -->
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  <!-- Bootstrap CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Fonts for heading and body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Eagle+Lake&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Kit -->
+  <script src="https://kit.fontawesome.com/c820918012.js" crossorigin="anonymous"></script>
+  
+  
+  <script src="AIzaSyB5JC_D7WdHa2dzl9xp_bIIKKc5j0HHhdQ" async defer></script>
+<!-- Replace YOUR_API_KEY with your actual API key -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5JC_D7WdHa2dzl9xp_bIIKKc5j0HHhdQ&callback=initMap" async defer></script>
+
+  
+  <!-- Include Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+ 
+  <style>
+/* ---------exclusives------------- */
+
+
+.container{
+	font-family: 'Georgia', sans-serif;
+	}
+	.container h2{
+	font-family: 'Georgia', sans-serif;
+	text-align: center;
+	}
+.exclusives {
+	font-family: 'Georgia', sans-serif;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 30px;
+}
+
+.exclusives div {
+    position: relative;
+	 
+}
+
+.exclusives div img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 0;
+}
+
+.exclusives div span {
+ font-family: 'Georgia', sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+   
+}
+
+
+.exclusives div span h3,
+.exclusives div span p {
+    font-family: 'Georgia', sans-serif;
+    margin: 0;
+    padding: 5px;
+}
+.exclusives div:hover span {
+    opacity: 1;
+}
+
+
+/* ------------Travellers Stories------------ */
+.stories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 30px;
+    margin-bottom: 30px;
+}
+
+.stories div img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.stories div {
+    position: relative;
+    text-align: center;
+}
+
+.stories p {
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 26px;
+}
+
+.start-btn {
+    text-decoration: none;
+    background: #0C7C59;
+    color: #fff;
+    width: 80%;
+    max-width: 350px;
+    display: block;
+    text-align: center;
+    margin: 60px auto;
+    padding: 15px;
+    border-radius: 30px;
+    font-size: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.container:hover .start-btn {
+    opacity: 1;
+}
+
+.start-btn:hover {
+    background: #ffcc00;
+}
+    </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <nav>
+    <!-- Logo image -->
+    <img src="logo.gif" class="logo" alt="Logo" title="Roamie">
+    
+    <!-- Navigation links -->
+    <ul class="navbar">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="aboutus.html">About Us</a></li>
+       <li class="submenu-parent">
+    <a href="explore.html">Explore▼ </a>
+    <!-- Submenu for Explore -->
+    <ul class="submenu">
+      <li><a href="itinerary.html">Itinerary</a></li>
+      <li><a href="packages.html">Packages</a></li>
+    </ul>
+  </li>
+  <a href="contact.html">Contact Us</a>
+	<li class="submenu-parent">
+      <a href="blog.html">Blog▼</a>
+	  <ul class="submenu">
+      <li><a href="FAQ.html">FAQ</a></li>
+    </ul></li>
+      <li><a href="login.php">
+          <span>Login</span>
+          <i class="fa fa-user" aria-hidden="true"></i>
+        </a></li>
+      <li><a href="logout.php">
+          <span>Logout</span>
+          <i class="fa fa-user" aria-hidden="true"></i>
+        </a></li>
+    </ul>
+  </nav>
+ <!-- End Header -->  
+ <!-- Start of explore -->
+  <section class="container">
+        <h1 class="sub-title"><br><b>Explore Activities and Trips </b></h1>
+        <div class="exclusives">
+            <div>
+            <img src="images/image-1.png">
+                <span>
+                    
+                <p>Tap here for activities and events in London</p>
+                </span><h3>London</h3>
+            </div>
+            <div>
+                <img src="images/image-2.png">
+                <span>
+                   
+                <a href="activites/paris.html"><p>Tap here for activities and events in Paris</p></a>
+				</span> <h3>Paris</h3>
+            </div>
+            <div>
+                <img src="images/image-3.png">
+                <span>
+                    
+                    <p>Tap here for activities and events in Australia</p>
+                </span><h3>Australia</h3>
+            </div>
+            <div>
+                <img src="images/image-4.png">
+                <span>
+                    
+                    <p>Tap here for activities and events in France</p>
+                </span><h3>Norway</h3>
+            </div>
+            <div>
+                <img src="images/image-5.png">
+                <span>
+                    
+                    <p>Tap here for activities and events in Canada</p>
+                </span><h3>Canada</h3>
+            </div>
+            <div>
+                <img src="images/image-6.png">
+                <span>
+                    
+                    <p>Tap here for activities and events in New York</p>
+                </span><h3>New York</h3>
+            </div>
+            <div>
+                <img src="images/image-7.png">
+                <span>
+                    
+                    <p>Tap here for activities and events in Los Angelos</p>
+                </span><h3>Los Angelos</h3>
+            </div>
+            <div>
+                <img src="images/image-8.png">
+                <span>
+                    
+                    <p>Tap here for activities and events in Chicago</p>
+                </span><h3>Chicago</h3>
+            </div>
+        </div>
+
+        <a href="quiz.html.html" class="start-btn">Take a quiz for your dream package </a>
+
+  <!-- traveller stories -->
+        <h2 class="sub-title">packages</h2>
+        <div class="stories">
+            <div>
+                <img src="images/traveller-1.jpg">
+                <p>Popular European countries with a budget of just 2k</p>
+            </div>
+            <div>
+                <img src="images/traveller-2.jpg">
+                <p>Bag packing through europe</p>
+            </div>
+            <div>
+                <img src="images/traveller-3.jpg">
+                <p>Best experience you get while traveling to NewYork</p>
+            </div>
+        </div>
+
+        <!-- Container for the map -->
+        <div class="map">
+		<div id="map" style="height: 400px;"></div>
+        </div>
+		
+      </section>
+   
+    <!-- End of explore -->
+   
+
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <h6>About</h6>
+          <p class="text-justify">Welcome to Roamie, your passport to boundless adventures and unforgettable journeys!
+            At Roamie, we believe that travel is not just about reaching a destination; it's about embracing the
+            unknown,
+            discovering new cultures, and creating stories that last a lifetime.
+            Whether you're a seasoned globetrotter or a first-time explorer, Roamie is here to inspire, guide, and
+            elevate
+            your travel experience.</p>
+        </div>
+        <div class="col-xs-6 col-md-3">
+          <h6>Quick Links</h6>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutus.html">About Me</a></li>
+            <li><a href="explore.html">Explore</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">Contact Me</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-sm-6 col-xs-12">
+          <p class="copyright-text">Copyright &copy; 2023 All Rights Reserved by
+            <a href="#">Roamie</a>.
+          </p>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+          <ul class="social-icons">
+            <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- End Footer -->
+
+
+
+
+    <!-- Script to initialize the map -->
+   <script>
+    function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: 51.505, lng: -0.09},
+            zoom: 13
+        });
+
+        // Add markers or other features as needed
+        var marker = new google.maps.Marker({
+            position: {lat: 51.505, lng: -0.09},
+            map: map,
+            title: 'Your Marker Title'
+        });
+    }
+</script>
+</body>
+
+</html>
